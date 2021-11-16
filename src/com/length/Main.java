@@ -1,10 +1,14 @@
 package com.length;
 
 import java.util.Scanner;
-
+	
 public class Main {
 	
-	public double equals(double x3, double y3, double x4, double y4, double length) {
+	double x1, x2, x3, x4;
+	double y1, y2, y3, y4;
+	double length;
+	
+	public double equals() {
 		
 		double length2 = Math.sqrt( Math.pow((x4 - x3), 2) + Math.pow((y4 - y3), 2));
 		
@@ -21,62 +25,63 @@ public class Main {
 	public void compareTo (double length, double length2) {
 		
 		if (length == length2) {
-			System.out.println(" The two lines are equal in length");
+			System.out.println("\n The two lines are equal in length");
 		}
 		
 		else if (length > length2) {
-			System.out.println(" The first line is greater than the second. ");
+			System.out.println("\n The first line is greater than the second. ");
 		}
 		
 		else {
-			System.out.println(" The second line is greater than the first. ");
+			System.out.println("\n The second line is greater than the first. ");
 		}
 	}
-
-	public static void main(String[] args) {
+	
+	public void calculateLength() {
 		// TODO Auto-generated method stub
 		
-		Main obj = new Main();
 		Scanner read = new Scanner(System.in);
 		
 		System.out.print(" Enter x1: ");
-		double x1 = read.nextDouble();
+		x1 = read.nextDouble();
 		
 		System.out.print(" Enter y1: ");
-		double y1 = read.nextDouble();
+		y1 = read.nextDouble();
 		
 		System.out.print(" Enter x2: ");
-		double x2 = read.nextDouble();
+		x2 = read.nextDouble();
 		
 		System.out.print(" Enter y2: ");
-		double y2 = read.nextDouble();
+		y2 = read.nextDouble();
 		
 		System.out.print(" Enter x3: ");
-		double x3 = read.nextDouble();
+		x3 = read.nextDouble();
 		
 		System.out.print(" Enter y3: ");
-		double y3 = read.nextDouble();
+		y3 = read.nextDouble();
 		
 		System.out.print(" Enter x4: ");
-		double x4 = read.nextDouble();
+		x4 = read.nextDouble();
 		
 		System.out.print(" Enter y4: ");
-		double y4 = read.nextDouble();
+		y4 = read.nextDouble();
 		
-		double length = Math.sqrt( Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+		length = Math.sqrt( Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 		
-		System.out.println(" The first point is : (" + x1 + ", " + y1 + ")");
+		System.out.println("\n The first point is : (" + x1 + ", " + y1 + ")");
 		System.out.println(" The second point is : (" + x2 + ", " + y2 + ")");		
 		
 		System.out.println(" The third point is : (" + x3 + ", " + y3 + ")");
-		System.out.println(" The fourth point is : (" + x4 + ", " + y4 + ")");
+		System.out.println(" The fourth point is : (" + x4 + ", " + y4 + ")\n");
 		
 		
-		double length2 = obj.equals(x3, y3, x4, y4, length);
-		System.out.println(" The length of the line is : " + length);
-		System.out.println(" Second line length: " + length2);
 		
-		obj.compareTo(length, length2);		
+		
+		double length2 = equals();
+		System.out.println(" The length of the first line is : " + length);
+		System.out.println(" The length of the second line is: " + length2);
+		
+		compareTo(length, length2);		
 		
 	}
 
